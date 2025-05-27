@@ -58,7 +58,6 @@ public class pagoController {
             pago pagoBuscado = pagoservice.BuscarUnPago(ID_PEDIDO);
             pedidoDTO pedido = pagoservice.buscarpedido(ID_PEDIDO);
             pagoPedidoDTO pagopedido = new pagoPedidoDTO();
-            pagopedido.setMONTO_PAGO(pagoBuscado.getMONTO_PAGO());
             pagopedido.setVALOR_TOTAL(pedido.getVALOR_TOTAL());
             pagopedido.setANOTACIONES(pedido.getANOTACIONES());
             pagopedido.setIVA(pedido.getIVA());
@@ -99,7 +98,6 @@ public class pagoController {
         try {
             pago pagoActualizado = pagoservice.BuscarUnPago(ID_USUARIO);
             pagoActualizado.setID_PAGO(pagoActualizar.getID_PAGO());
-            pagoActualizado.setMONTO_PAGO(pagoActualizar.getMONTO_PAGO());
             pagoservice.GuardarPago(pagoActualizar);
             return ResponseEntity.ok(pagoActualizado);
         } catch (Exception e) {

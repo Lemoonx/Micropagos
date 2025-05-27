@@ -27,7 +27,12 @@ public class pago {
     @Column(name= "ID_PAGO")
     private long ID_PAGO;
 
-    @Column(name= "MONTO_PAGO",nullable= false , length = 15)
-    private long MONTO_PAGO;
+    @Column(name= "TIPO_METODO_DE_PAGO",nullable= false , length = 100)
+    private String NOMBRE;
 
+    @Column(name= "ESTADO_DEL_PAGO",nullable= false , length = 100)
+    private String ESTADO_DEL_PAGO;
+
+    @Column(name = "ID_PEDIDO",nullable= false , length = 10)
+    private Long ID_PEDIDO;
 }
